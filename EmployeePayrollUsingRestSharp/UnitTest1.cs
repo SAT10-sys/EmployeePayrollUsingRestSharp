@@ -86,7 +86,7 @@ namespace EmployeePayrollUsingRestSharp
         [TestMethod]
         public void TestMethod5()
         {
-            RestRequest request = new RestRequest("/Employees/7", Method.DELETE);     
+            RestRequest request = new RestRequest("/Employees/6", Method.DELETE);     
             IRestResponse response = client.Execute(request);    
             Assert.AreEqual(response.StatusCode, System.Net.HttpStatusCode.OK);
         }
