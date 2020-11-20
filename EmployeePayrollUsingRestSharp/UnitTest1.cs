@@ -70,5 +70,18 @@ namespace EmployeePayrollUsingRestSharp
             Assert.AreEqual(employee.Name, dataResponse.Name);
             Assert.AreEqual(employee.salary, dataResponse.salary);
         }
+        [TestMethod]
+        public void TestMethod4()
+        {
+            RestRequest request = new RestRequest("employees/4", Method.PUT);
+            JObject jobject = new JObject();
+            jobject.Add("name", "Kirk Hammet");
+            jobject.Add("salary", 80000);
+            request.AddParameter("application/json", jobject, ParameterType.RequestBody);            
+            IRestResponse response = client.Execute(request);
+            Employee dataResponse = JsonConvert.DeserializeObject<Employee>(response.Content);       
+            Assert.AreEqual(response.StatusCode, System.Net.HttpStatusCode.OK);
+            Assert.AreEqual(dataResponse.salary, 80000);
+        }
     }
 }

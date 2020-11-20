@@ -18,41 +18,41 @@
     {
       "id": 4,
       "name": "Kirk Hammet",
-      "Salary": "90000"
+      "Salary": "80000"
     },
     {
       "name": "Mike Shinoda",
-      "salary": 60000,
+      "salary": "60000",
       "id": 5
     },
     {
       "name": "Anthony Kiedis",
-      "salary": 75000,
+      "salary": "75000",
       "id": 6
     },
     {
       "name": "Steven Wilson",
-      "salary": 95000,
+      "salary": "95000",
       "id": 8
     },
 {
 "name":"Axl Rose",
-"salary":90000,
+"salary":"90000",
 "id":9
 },
 {
 "name":"Cliff Burton",
-"salary":75000,
+"salary":"75000",
 "id":10
 },
 {
 "name":"Chester Bennington",
-"salary":85000,
+"salary":"85000",
 "id":11
 },
 {
 "name":"Freddie Mercurie",
-"salary":95000,
+"salary":"95000",
 "id":12
 }
   ]
