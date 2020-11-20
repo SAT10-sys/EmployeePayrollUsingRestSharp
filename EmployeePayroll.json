@@ -39,6 +39,21 @@
 "name":"Axl Rose",
 "salary":90000,
 "id":9
+},
+{
+"name":"Cliff Burton",
+"salary":75000,
+"id":10
+},
+{
+"name":"Chester Bennington",
+"salary":85000,
+"id":11
+},
+{
+"name":"Freddie Mercurie",
+"salary":95000,
+"id":12
 }
   ]
 }

@@ -22,7 +22,7 @@ namespace EmployeePayrollUsingRestSharp
             IRestRequest request = new RestRequest("/employees", Method.GET);
             IRestResponse response = client.Execute(request);
             return response;
-        }
+        }/*
         [TestMethod]
         public void TestMethod1()
         {
@@ -34,6 +34,7 @@ namespace EmployeePayrollUsingRestSharp
             foreach(var i in employeeList)
                 Console.WriteLine("ID: "+i.id+"\nNAME: "+i.Name+"\nSALARY: "+i.salary);
         }
+        /*
         [TestMethod]
         public void TestMethod2()
         {
@@ -48,6 +49,26 @@ namespace EmployeePayrollUsingRestSharp
             Assert.AreEqual(response.StatusCode, System.Net.HttpStatusCode.Created);
             Assert.AreEqual("Axl Rose", employeeList.Name);
             Assert.AreEqual(90000, employeeList.salary);
+        }*/
+        [TestMethod]
+        public void TestMethod3()
+        {
+            //tests adding of multiple employees
+            Employee employee = new Employee();
+            List<Employee> list = new List<Employee>();
+            list.Add(new Employee { Name = "Cliff Burton", salary = 75000 });
+            list.Add(new Employee { Name = "Chester Bennington", salary = 85000 });
+            list.Add(new Employee { Name = "Freddie Mercurie", salary = 95000 });
+            RestRequest request = new RestRequest("/employees/create", Method.POST);
+            JObject jObject = new JObject();
+            jObject.Add("name", employee.Name);
+            jObject.Add("salary", employee.salary);
+            request.AddParameter("application/json", jObject, ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+            Employee dataResponse = JsonConvert.DeserializeObject<Employee>(response.Content);
+            //Assert.AreEqual(response.StatusCode, System.Net.HttpStatusCode.Created);
+            Assert.AreEqual(employee.Name, dataResponse.Name);
+            Assert.AreEqual(employee.salary, dataResponse.salary);
         }
     }
 }
