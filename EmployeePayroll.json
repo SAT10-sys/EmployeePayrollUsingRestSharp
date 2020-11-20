@@ -34,6 +34,11 @@
       "name": "Steven Wilson",
       "salary": 95000,
       "id": 8
-    }
+    },
+{
+"name":"Axl Rose",
+"salary":90000,
+"id":9
+}
   ]
 }
