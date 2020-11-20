@@ -83,5 +83,12 @@ namespace EmployeePayrollUsingRestSharp
             Assert.AreEqual(response.StatusCode, System.Net.HttpStatusCode.OK);
             Assert.AreEqual(dataResponse.salary, 80000);
         }
+        [TestMethod]
+        public void TestMethod5()
+        {
+            RestRequest request = new RestRequest("/Employees/7", Method.DELETE);     
+            IRestResponse response = client.Execute(request);    
+            Assert.AreEqual(response.StatusCode, System.Net.HttpStatusCode.OK);
+        }
     }
 }
